@@ -17,242 +17,120 @@
             font-family: 'Nunito', sans-serif;
             min-height: 100vh;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            padding: 10px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            overflow: hidden;
-            position: relative;
+            justify-content: center;
         }
 
-        /* Decoraciones flotantes */
+        /* Decoraciones - MUY sutiles en móvil */
         .decoration {
-            position: absolute;
-            font-size: 1.5rem;
-            opacity: 0.6;
-            animation: float 6s ease-in-out infinite;
+            position: fixed;
+            font-size: 20px;
+            opacity: 0.2;
+            animation: float 8s ease-in-out infinite;
+            z-index: 1;
         }
 
-        .decoration:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; }
-        .decoration:nth-child(2) { top: 10%; right: 10%; animation-delay: 1.5s; }
-        .decoration:nth-child(3) { top: 20%; left: 10%; animation-delay: 3s; }
-        .decoration:nth-child(4) { bottom: 15%; right: 15%; animation-delay: 2s; }
-        .decoration:nth-child(5) { bottom: 25%; left: 5%; animation-delay: 4s; }
-        .decoration:nth-child(6) { top: 35%; right: 8%; animation-delay: 0.5s; }
-        .decoration:nth-child(7) { bottom: 10%; left: 15%; animation-delay: 3.5s; }
-        .decoration:nth-child(8) { top: 50%; left: 15%; animation-delay: 2.5s; }
-        .decoration:nth-child(9) { bottom: 20%; right: 8%; animation-delay: 1s; }
-        .decoration:nth-child(10) { top: 45%; right: 5%; animation-delay: 4.5s; }
-
-        /* Responsive para móviles */
-        @media (max-width: 768px) {
-            body {
-                padding: 0.5rem 0.2rem;
-                align-items: flex-start;
-                min-height: 100vh;
-            }
-            
-            h1 {
-                font-size: 1.4rem;
-                margin-bottom: 1rem;
-            }
-            
-            .container {
-                padding: 1.2rem;
-                margin: 1rem auto;
-                width: 98%;
-                max-width: none;
-            }
-            
-            .surprise-btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 1rem;
-            }
-            
-            .message {
-                padding: 1rem;
-                font-size: 0.9rem;
-                margin-top: 1rem;
-            }
-            
-            .decoration {
-                font-size: 1.2rem;
-                opacity: 0.3;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 0.2rem;
-            }
-            
-            h1 {
-                font-size: 1.2rem;
-                margin-bottom: 0.8rem;
-            }
-            
-            .container {
-                padding: 1rem;
-                margin: 0.5rem auto;
-                border-radius: 15px;
-            }
-            
-            .surprise-btn {
-                padding: 0.7rem 1.2rem;
-                font-size: 0.9rem;
-            }
-            
-            .message {
-                font-size: 0.85rem;
-                padding: 0.8rem;
-            }
-            
-            .message div:first-child {
-                font-size: 1.2rem !important;
-            }
-        }
+        .decoration:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .decoration:nth-child(2) { top: 20%; right: 8%; animation-delay: 2s; }
+        .decoration:nth-child(3) { bottom: 25%; left: 8%; animation-delay: 4s; }
+        .decoration:nth-child(4) { bottom: 15%; right: 5%; animation-delay: 1s; }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(10deg); }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
         }
 
         .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            width: 100%;
+            max-width: 350px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 3rem;
-            border-radius: 30px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            max-width: 500px;
-            width: 90%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             position: relative;
+            z-index: 10;
             transform: scale(0);
-            animation: popIn 1s ease-out 0.5s forwards;
+            animation: popIn 1s ease-out 0.3s forwards;
         }
 
         @keyframes popIn {
-            0% { transform: scale(0) rotate(-180deg); opacity: 0; }
-            50% { transform: scale(1.1) rotate(0deg); opacity: 1; }
-            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 20px;
             color: #ff6b9d;
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
             font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.3;
         }
 
         .surprise-btn {
-            background: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500);
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
             color: white;
             border: none;
-            padding: 1.2rem 2.5rem;
-            font-size: 1.3rem;
+            padding: 12px 25px;
+            font-size: 16px;
             font-weight: 700;
-            border-radius: 50px;
+            border-radius: 25px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.4);
             font-family: 'Nunito', sans-serif;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .surprise-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 107, 157, 0.6);
-        }
-
-        .surprise-btn:active {
-            transform: translateY(-2px);
-        }
-
-        .surprise-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s;
+            max-width: 200px;
         }
 
-        .surprise-btn:hover::before {
-            left: 100%;
+        .surprise-btn:hover, .surprise-btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 157, 0.6);
         }
 
         .message {
             display: none;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 2rem;
-            border-radius: 20px;
-            margin-top: 2rem;
-            font-size: 1.2rem;
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 15px;
+            font-size: 14px;
             font-weight: 600;
-            line-height: 1.6;
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-            animation: slideUp 0.8s ease-out;
+            line-height: 1.4;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        .message .title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .message .main {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .message .cats {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .message .final {
+            font-size: 13px;
+            opacity: 0.9;
         }
 
         @keyframes slideUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
-            }
-        }
-
-        .hearts {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .heart {
-            position: absolute;
-            color: #ff6b9d;
-            font-size: 2rem;
-            animation: heartFall 3s linear infinite;
-            opacity: 0;
-        }
-
-        @keyframes heartFall {
-            0% {
-                opacity: 1;
-                transform: translateY(-100px) rotate(0deg);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        .confetti {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #f8b500;
-            animation: confettiFall 3s linear infinite;
-        }
-
-        @keyframes confettiFall {
-            0% {
-                opacity: 1;
-                transform: translateY(-100px) rotate(0deg);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(100vh) rotate(720deg);
             }
         }
 
@@ -261,45 +139,147 @@
             background: linear-gradient(45deg, #4ecdc4, #44a08d);
             color: white;
             border: none;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
+            padding: 8px 15px;
+            font-size: 14px;
             font-weight: 600;
-            border-radius: 25px;
+            border-radius: 20px;
             cursor: pointer;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
+            margin-top: 10px;
             font-family: 'Nunito', sans-serif;
+            transition: all 0.3s ease;
         }
 
-        .reset-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(78, 205, 196, 0.4);
+        .reset-btn:hover, .reset-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Efectos especiales */
+        .hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 24px;
+            animation: heartFall 3s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes heartFall {
+            0% {
+                opacity: 1;
+                transform: translateY(-50px) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(calc(100vh + 50px)) rotate(360deg);
+            }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            animation: confettiFall 3s linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                opacity: 1;
+                transform: translateY(-50px) rotate(0deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(calc(100vh + 50px)) rotate(720deg);
+            }
+        }
+
+        /* Para pantallas MÁS grandes (tablet/desktop) */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 450px;
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 28px;
+                margin-bottom: 25px;
+            }
+            
+            .surprise-btn {
+                padding: 15px 30px;
+                font-size: 18px;
+                max-width: 250px;
+            }
+            
+            .message {
+                padding: 20px;
+                font-size: 16px;
+                margin-top: 20px;
+            }
+            
+            .message .title {
+                font-size: 22px;
+            }
+            
+            .message .main,
+            .message .cats {
+                font-size: 16px;
+            }
+            
+            .decoration {
+                font-size: 30px;
+                opacity: 0.4;
+            }
+        }
+
+        /* Para pantallas muy pequeñas */
+        @media (max-width: 320px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 18px;
+            }
+            
+            .surprise-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .message {
+                padding: 12px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Decoraciones flotantes -->
+    <!-- Decoraciones MUY sutiles -->
     <div class="decoration">🐱</div>
     <div class="decoration">🍓</div>
-    <div class="decoration">🐾</div>
-    <div class="decoration">🎂</div>
-    <div class="decoration">😸</div>
-    <div class="decoration">🎮</div>
     <div class="decoration">💖</div>
-    <div class="decoration">🙀</div>
-    <div class="decoration">🌸</div>
     <div class="decoration">✨</div>
 
     <!-- Contenedor principal -->
     <div class="container">
         <h1>¡Hay una sorpresa para ti, Kadisha! 🐱</h1>
         <button class="surprise-btn" onclick="showSurprise()">¡Toca aquí! ✨</button>
+        
         <div class="message" id="message">
-            <div style="font-size: 1.8rem; margin-bottom: 1rem;">🎉 ¡Feliz cumpleaños, Kadisha! 🎉</div>
-            <div style="margin-bottom: 1rem;">Te extraño y te quiero mucho 💖🎂🎮🍓</div>
-            <div style="font-size: 1.1rem; margin-bottom: 1rem;">🐱 Que todos los gatitos del mundo te llenen de amor y ronroneos 😸</div>
-            <div style="font-size: 0.9rem; opacity: 0.9;">¡Espero que tengas el día más increíble! Eres especial y mereces toda la felicidad del mundo 🌟 ¡Miau! 🐾</div>
+            <div class="title">🎉 ¡Feliz cumpleaños, Kadisha! 🎉</div>
+            <div class="main">Te extraño y te quiero mucho 💖🎂🎮🍓</div>
+            <div class="cats">🐱 Que todos los gatitos del mundo te llenen de amor y ronroneos 😸</div>
+            <div class="final">¡Espero que tengas el día más increíble! Eres especial y mereces toda la felicidad del mundo 🌟 ¡Miau! 🐾</div>
         </div>
+        
         <button class="reset-btn" id="resetBtn" onclick="resetSurprise()">¡Otra vez! 🔄</button>
     </div>
 
@@ -317,13 +297,13 @@
             resetBtn.style.display = 'inline-block';
             surpriseBtn.style.display = 'none';
             
-            // Crear efectos de corazones y confetti
+            // Crear efectos
             createHearts();
             createConfetti();
             
-            // Reproducir sonido de celebración (simulado con vibración en móviles)
+            // Vibración en móviles
             if (navigator.vibrate) {
-                navigator.vibrate([200, 100, 200, 100, 200]);
+                navigator.vibrate([200, 100, 200]);
             }
         }
 
@@ -342,16 +322,16 @@
 
         function createHearts() {
             const heartsContainer = document.getElementById('hearts');
-            const hearts = ['💖', '💕', '💗', '💓', '❤️', '🐱', '😸', '🐾', '😻', '😺'];
+            const hearts = ['💖', '💕', '💗', '🐱', '😸', '🐾', '😻'];
             
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 15; i++) {
                 setTimeout(() => {
                     const heart = document.createElement('div');
                     heart.className = 'heart';
                     heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
-                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.left = Math.random() * 90 + '%';
                     heart.style.animationDelay = Math.random() * 2 + 's';
-                    heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    heart.style.animationDuration = (Math.random() * 1.5 + 2.5) + 's';
                     heartsContainer.appendChild(heart);
                     
                     setTimeout(() => {
@@ -367,32 +347,24 @@
             const heartsContainer = document.getElementById('hearts');
             const colors = ['#ff6b9d', '#4ecdc4', '#45b7d1', '#f8b500', '#96ceb4'];
             
-            for (let i = 0; i < 25; i++) {
+            for (let i = 0; i < 20; i++) {
                 setTimeout(() => {
                     const confetti = document.createElement('div');
                     confetti.className = 'confetti';
                     confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.left = Math.random() * 90 + '%';
                     confetti.style.animationDelay = Math.random() * 1 + 's';
-                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    confetti.style.animationDuration = (Math.random() * 1.5 + 2) + 's';
                     heartsContainer.appendChild(confetti);
                     
                     setTimeout(() => {
                         if (confetti.parentNode) {
                             confetti.parentNode.removeChild(confetti);
                         }
-                    }, 4000);
+                    }, 3500);
                 }, i * 100);
             }
         }
-
-        // Efectos adicionales al cargar la página
-        window.addEventListener('load', function() {
-            // Pequeña vibración de bienvenida
-            if (navigator.vibrate) {
-                setTimeout(() => navigator.vibrate(100), 1000);
-            }
-        });
     </script>
 </body>
 </html>
