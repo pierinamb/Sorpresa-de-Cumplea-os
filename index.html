@@ -27,21 +27,72 @@
         /* Decoraciones flotantes */
         .decoration {
             position: absolute;
-            font-size: 2rem;
+            font-size: 1.5rem;
             opacity: 0.6;
             animation: float 6s ease-in-out infinite;
         }
 
-        .decoration:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-        .decoration:nth-child(2) { top: 15%; right: 20%; animation-delay: 1.5s; }
-        .decoration:nth-child(3) { top: 25%; left: 15%; animation-delay: 3s; }
-        .decoration:nth-child(4) { bottom: 20%; right: 25%; animation-delay: 2s; }
-        .decoration:nth-child(5) { bottom: 30%; left: 5%; animation-delay: 4s; }
-        .decoration:nth-child(6) { top: 40%; right: 10%; animation-delay: 0.5s; }
-        .decoration:nth-child(7) { bottom: 15%; left: 20%; animation-delay: 3.5s; }
-        .decoration:nth-child(8) { top: 60%; left: 25%; animation-delay: 2.5s; }
-        .decoration:nth-child(9) { bottom: 25%; right: 15%; animation-delay: 1s; }
-        .decoration:nth-child(10) { top: 50%; right: 5%; animation-delay: 4.5s; }
+        .decoration:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; }
+        .decoration:nth-child(2) { top: 10%; right: 10%; animation-delay: 1.5s; }
+        .decoration:nth-child(3) { top: 20%; left: 10%; animation-delay: 3s; }
+        .decoration:nth-child(4) { bottom: 15%; right: 15%; animation-delay: 2s; }
+        .decoration:nth-child(5) { bottom: 25%; left: 5%; animation-delay: 4s; }
+        .decoration:nth-child(6) { top: 35%; right: 8%; animation-delay: 0.5s; }
+        .decoration:nth-child(7) { bottom: 10%; left: 15%; animation-delay: 3.5s; }
+        .decoration:nth-child(8) { top: 50%; left: 15%; animation-delay: 2.5s; }
+        .decoration:nth-child(9) { bottom: 20%; right: 8%; animation-delay: 1s; }
+        .decoration:nth-child(10) { top: 45%; right: 5%; animation-delay: 4.5s; }
+
+        /* Responsive para móviles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.6rem;
+                margin-bottom: 1rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+                margin: 1rem auto;
+                width: 98%;
+            }
+            
+            .surprise-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .message {
+                padding: 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .decoration {
+                font-size: 1.2rem;
+            }
+            
+            body {
+                padding: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+            
+            .surprise-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .message {
+                font-size: 0.85rem;
+            }
+        }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
